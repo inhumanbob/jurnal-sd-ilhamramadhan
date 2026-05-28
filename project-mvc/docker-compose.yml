@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web-app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - APP_USER=${USER_NAME}
+    volumes:
+      - ./logs:/app/logs # Bind Mount lama
+      - shared-storage:/app/data # (BARU) Named Volume dipetakan ke /app/data
+    networks:
+      - mvc-network
+
+  db-server:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_PASSWORD=rahasia
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - mvc-network
+
+volumes:
+  db-data: 
+  shared-storage: # (BARU) Definisi global Named Volume
+
+networks:
+  mvc-network:
+    driver: bridge
