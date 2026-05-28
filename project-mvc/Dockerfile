@@ -17,4 +17,4 @@ ENV PATH=/root/.local/bin:$PATH
 # Memastikan variabel lingkungan M12 tetap ada untuk penugasan D2
 ENV APP_USER="Ilham Dimas Ramadhan"
 
-CMD ["python", "app.py"]
+CMD ["python", "-u", "app.py"]
