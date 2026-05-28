@@ -7,6 +7,7 @@ app_env = os.getenv('APP_ENV', 'development')
 
 if __name__ == "__main__":
     print(f"Halo {user_name}! Aplikasi ini berjalan di dalam kontainer Docker dengan status lingkungan '{app_env}'.")
+    print("=== Versi 2.0 - Stabil ===") # BARIS BARU INI DITAMBAHKAN
     print("[System] Menjaga kontainer tetap hidup untuk pengujian volume...")
     
     # Loop ini membuat program Python standby terus menerus
